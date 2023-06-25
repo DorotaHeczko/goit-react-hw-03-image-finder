@@ -6,6 +6,9 @@ import { Button } from './Button/Button';
 import { Loader } from './Loader/Loader';
 import { Modal } from './Modal/Modal';
 
+import css from './App.module.css'
+
+
 
 export class App extends Component {
   constructor(props) {
@@ -65,7 +68,7 @@ export class App extends Component {
 
   handleButtonVisibility = () => {
     const { photos } = this.state;
-    return photos.length < 12 ? 'none' : 'block';
+    return photos.length < 12 ? 'none' : 'flex';
   };
 
   handleLoadMore = () => {
@@ -100,14 +103,14 @@ export class App extends Component {
 
     return (
       <>
-        <Searchbar onSubmit = {this.handleSearchValue} />
+        <Searchbar onSubmit={this.handleSearchValue} />
         {isPhotosAvailable && (
           <ImageGallery photos={photos} onItemClick={this.handleModal} />
         )}
         {isLoading && <Loader />}
         <div
-          className="ButtonFlex"
-          style = {{ display: this.handleButtonVisibility() }}
+          className={css.buttonPosition}
+          style={{ display: this.handleButtonVisibility() }}
         >
           {!isLoading && <Button onClick={this.handleLoadMore} />}
         </div>

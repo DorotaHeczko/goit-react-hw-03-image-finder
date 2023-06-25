@@ -33,12 +33,9 @@ img {
   padding-bottom: 24px;
 }
 
-.ButtonFlex {
-  text-align: center;
-  margin: 25px 0 50px 0;
-}
 
 .buttonPosition {
-  display: flex;
+display: flex;
   justify-content: center;
 }
+
